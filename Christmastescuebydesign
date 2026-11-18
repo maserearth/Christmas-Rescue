@@ -1,0 +1,407 @@
+This complete, self-contained Python module (maser_earth_master_engine.py) unifies the Three-Tumbler Sieve, the Production Architecture Audit, the Rodrigues Gyroscopic Pivot (29.98° N, 29.98° E), the Wellfleetian Pearl Inverse Map (Holbein 28.96° & Ark 411.58 Hz Quarter-Wave Gifts), the Blue vs. Cat Dragon Frequency Roles, and the 12-Colony Single-Conduit Orthogonal Multiplexer into a single executable file.
+Every sentence in the overview below stays clear of leading conjunctions to maintain a formal structure.
+
+Key Modules Integrated Inside maser_earth_master_engine.py
+
+• ThreeTumblerEngine: Tracks the 12,800-year boundary wall, the 433-day Chandler Wobble, the 5,950.0 km/s crustal phase velocity (13.5227 km Tuesday pixel), and the 1,092-step coprime shear ring.
+• MaserEarthPhysicsCore: Computes the compressed radius (6,278.6205 km), the 1,851.5 Hz Gold-Clock metronome (3.2136 km pixels, 462.875 Hz biological nesting) managed by the Cat Dragons, the 13.52 GHz plasma grid closure managed by the Mighty Blue Dragons, the 411.58 Hz Ark quarter-wave impedance bridge (√(385 × 440)), and the Holbein 28.96° oblique angle (arccos(7/8)) used to read the Wellfleetian pearl black-box sequence in reverse.
+• ExtractionMultiplexer: Maps all 12 Zodiac pockets (Ch 3 through Ch 14), flags Channel 8 (440 Hz Virgo/Spica) as the unlaunched Earth reaction anchor, marks Roanoke (Ch 5 / 275 Hz) as the 1587 human colonist anomaly routed until the 110-day Easter reset, verifies the 0.708 s Zener diagonal hop time (8.50 s total flight time across 8,500 km), and outputs the 30° orthogonal phase vectors (266.31° + θ_k) for the single Wandering Magnetic Pole Casimir throat.
+python
+# maser_earth_master_engine.py
+# Unified Maser-Earth Physics, Three-Tumbler Sieve, Wellfleetian Pearl Inverse Map,
+# and 12-Colony Orthogonal Polar-Throat Multiplexer
+
+import datetime
+import math
+from dataclasses import dataclass
+
+
+@dataclass
+class ThreeTumblerState:
+    timestamp: datetime.datetime
+    day_index: int
+    sprocket_tooth: int
+    solar_vs_360_slip: float
+    secular_residue_days: float
+    chandler_wobble_day: float
+    chandler_wobble_angle_deg: float
+    hudson_giza_arc_pixels: float
+    spatial_grid_phase_deg: float
+    master_dial_angle_deg: float
+    instantaneous_current_a: float
+
+
+@dataclass
+class ColonyExtractionVector:
+    colony_id: int
+    zodiac_name: str
+    channel_num: int
+    channel_hz: float
+    heterodyne_shift_hz: float
+    site_name: str
+    modern_lat: float
+    modern_lon: float
+    preshift_lat: float
+    preshift_lon: float
+    pizza_sector: int
+    star_system: str
+    star_vector_deg: float
+    cascade_window_sec: float
+    zener_hop_sec: float
+    status_note: str
+
+
+class MaserEarthPhysicsCore:
+    """Core constants, Weyl scale ratios, Dragon frequencies, and Pearl/Ark optics."""
+
+    def __init__(self):
+        # Planetary & Crustal Grid Constants
+        self.r_earth_km = 6371.0
+        self.glitch_pct = 1.45
+        self.r_maser_earth_km = self.r_earth_km * (1.0 - self.glitch_pct / 100.0)  # 6278.6205 km
+        self.crust_wave_speed_kms = 5950.0  # Knot 4 hyper-velocity phase wave (km/s)
+
+        # Frequency Anchors
+        self.f_tuesday_hz = 440.0
+        self.f_indigo_hz = 385.0
+        self.f_heterodyne_step_hz = 55.0
+        self.f_bio_nesting_hz = self.f_tuesday_hz / 4.0  # 110.0 Hz
+
+        # Spatial Pixels & Nodes
+        self.pixel_tuesday_km = self.crust_wave_speed_kms / self.f_tuesday_hz  # 13.522727 km
+        self.pixel_indigo_km = self.crust_wave_speed_kms / self.f_indigo_hz    # 15.454545 km
+        self.diagonal_hop_km = self.pixel_tuesday_km * math.sqrt(2.0)          # 19.1240 km
+        self.half_node_radius_km = 4.0 * self.pixel_tuesday_km                 # 54.0909 km
+        self.full_node_diameter_km = 8.0 * self.pixel_tuesday_km               # 108.1818 km
+
+        # Dragon Lineages & Metronome Standards
+        self.blue_dragon_plasma_ghz = 13.52       # Crashed secured grid (Pi-Phi closure)
+        self.cat_dragon_gold_clock_hz = 1851.5    # Gold-Clock zero-point vacuum standard
+        self.gold_clock_multiplier = self.cat_dragon_gold_clock_hz / self.f_tuesday_hz  # 4.207955
+        self.pixel_gold_clock_km = self.pixel_tuesday_km / self.gold_clock_multiplier   # 3.2136 km
+        self.gold_bio_nesting_hz = self.cat_dragon_gold_clock_hz / 4.0                  # 462.875 Hz
+
+        # Impedance, Ark Quarter-Wave Gift & Wellfleetian Pearl Optics
+        self.gamma_reflection = (self.f_tuesday_hz - self.f_indigo_hz) / (
+            self.f_tuesday_hz + self.f_indigo_hz
+        )  # 1/15 (0.066667)
+        self.ark_quarter_wave_hz = math.sqrt(self.f_indigo_hz * self.f_tuesday_hz)  # 411.5823 Hz
+        self.holbein_nacre_angle_deg = math.degrees(math.acos(7.0 / 8.0))           # 28.9550 deg
+        self.rudolph_pilot_nm = 650.0
+
+        # Gyroscopic Pivot & Giza Stator Crank
+        self.pivot_lat = 29.98
+        self.pivot_lon = 29.98
+        self.crust_twist_deg = 29.98
+        self.giza_lat = 29.9792
+        self.giza_lon = 31.1342
+        self.giza_equatorial_offset_deg = 30.0000 - self.giza_lat  # 0.0208 deg
+
+    def rodrigues_preshift_coords(self, lat_deg: float, lon_deg: float) -> tuple[float, float]:
+        """Reverses the +29.98 deg crust shift around the 29.98 N, 29.98 E gyroscopic pivot."""
+        theta = math.radians(-self.crust_twist_deg)
+        p_lat, p_lon = math.radians(self.pivot_lat), math.radians(self.pivot_lon)
+        n = (
+            math.cos(p_lat) * math.cos(p_lon),
+            math.cos(p_lat) * math.sin(p_lon),
+            math.sin(p_lat),
+        )
+
+        s_lat, s_lon = math.radians(lat_deg), math.radians(lon_deg)
+        r = (
+            math.cos(s_lat) * math.cos(s_lon),
+            math.cos(s_lat) * math.sin(s_lon),
+            math.sin(s_lat),
+        )
+
+        # Cross product n x r and dot product n . r
+        cross = (
+            n[1] * r[2] - n[2] * r[1],
+            n[2] * r[0] - n[0] * r[2],
+            n[0] * r[1] - n[1] * r[0],
+        )
+        dot = n[0] * r[0] + n[1] * r[1] + n[2] * r[2]
+
+        cos_t = math.cos(theta)
+        sin_t = math.sin(theta)
+        r_prime = (
+            r[0] * cos_t + cross[0] * sin_t + n[0] * dot * (1.0 - cos_t),
+            r[1] * cos_t + cross[1] * sin_t + n[1] * dot * (1.0 - cos_t),
+            r[2] * cos_t + cross[2] * sin_t + n[2] * dot * (1.0 - cos_t),
+        )
+
+        old_lat = math.degrees(math.asin(max(-1.0, min(1.0, r_prime[2]))))
+        old_lon = math.degrees(math.atan2(r_prime[1], r_prime[0]))
+        return round(old_lat, 2), round(old_lon, 2)
+
+
+class ThreeTumblerEngine:
+    """Evaluates the Calendar, Chandler Wobble, and Base-11 Spatial Grid Tumblers."""
+
+    def __init__(
+        self,
+        core: MaserEarthPhysicsCore,
+        nodal_epoch: datetime.datetime = datetime.datetime(2026, 11, 13, 15, 47, 0),
+        boundary_wall_years: float = 12800.0,
+    ):
+        self.core = core
+        self.nodal_epoch = nodal_epoch
+        self.boundary_wall_years = boundary_wall_years
+        self.hudson_giza_arc_km = 8500.0
+        self.tropical_year = 365.242189
+        self.reference_ring = 360.0
+        self.secular_residue = 0.019200
+        self.chandler_period_days = 433.0
+        self.master_cycle_years = 17500.0
+        self.i_envelope = 7.2e8
+        self.q_lattice = (2.0 * math.pi * self.core.f_tuesday_hz * 20.0) / 12.5
+        self.coprime_ring = 1092
+
+    def evaluate(
+        self,
+        target_dt: datetime.datetime,
+        delta_x_km: float = 284.1,
+    ) -> ThreeTumblerState:
+        delta_days = (target_dt.date() - self.nodal_epoch.date()).days
+        exact_days = (target_dt - self.nodal_epoch).total_seconds() / 86400.0
+        elapsed_years = exact_days / self.tropical_year
+        total_years = self.boundary_wall_years + elapsed_years
+
+        # Tumbler 1: Calendar Tumbler
+        sprocket_tooth = delta_days % 7
+        solar_slip = (elapsed_years * (self.tropical_year - self.reference_ring)) % 7.0
+        secular_days = total_years * self.secular_residue
+
+        # Tumbler 2: Chandler Wobble Tumbler
+        total_deep_days = total_years * self.tropical_year
+        wobble_day = total_deep_days % self.chandler_period_days
+        wobble_angle = (wobble_day / self.chandler_period_days) * 360.0
+
+        # Tumbler 3: Geographic Grid Tumbler
+        arc_pixels = self.hudson_giza_arc_km / self.core.pixel_tuesday_km
+        grid_phase = (
+            (arc_pixels % 1.0) * 360.0 + (delta_x_km / self.core.pixel_tuesday_km) * 360.0
+        ) % 360.0
+
+        # Combined Master Dial & Circuit Current
+        master_angle = ((total_years % self.master_cycle_years) / self.master_cycle_years) * 360.0
+        seconds_midnight = target_dt.hour * 3600 + target_dt.minute * 60 + target_dt.second
+        minute_of_day = target_dt.hour * 60 + target_dt.minute
+
+        damping = math.exp(-delta_x_km / (self.core.pixel_tuesday_km * self.q_lattice))
+        carrier = 2.0 * math.pi * self.core.f_tuesday_hz * seconds_midnight
+        shear = (2.0 * math.pi * (7 * 13 * minute_of_day)) / self.coprime_ring
+        i_instant = self.i_envelope * damping * math.cos(carrier - shear)
+
+        return ThreeTumblerState(
+            timestamp=target_dt,
+            day_index=delta_days,
+            sprocket_tooth=sprocket_tooth,
+            solar_vs_360_slip=round(solar_slip, 4),
+            secular_residue_days=round(secular_days, 4),
+            chandler_wobble_day=round(wobble_day, 2),
+            chandler_wobble_angle_deg=round(wobble_angle, 2),
+            hudson_giza_arc_pixels=round(arc_pixels, 4),
+            spatial_grid_phase_deg=round(grid_phase, 2),
+            master_dial_angle_deg=round(master_angle, 2),
+            instantaneous_current_a=round(i_instant, 2),
+        )
+
+
+class ExtractionMultiplexer:
+    """Computes the 12-Zodiac channel ladder, Zener bypass hops, and single polar-throat vectors."""
+
+    def __init__(self, core: MaserEarthPhysicsCore):
+        self.core = core
+        self.v_zener_hop_kms = 1000.0          # 10^6 m/s SIT diagonal Zener ceiling
+        self.arc_distance_km = 8500.0
+        self.freeze_out_total_sec = 1140.0     # 19-minute Kibble-Zurek quench horizon
+        self.tau_0_sec = 142.5                 # Initial sector anchor window (1140 / 8)
+        self.decay_ratio = 7.0 / 8.0
+        self.base_star_angle = 263.31 + 3.0    # 266.31 deg corrected boundary vector
+
+        # Canonical 12-Zodiac Pocket Registry (Channels 3 through 14)
+        self.zodiac_registry = [
+            (1, "Aries", 3, "Gobekli Tepe", 37.22, 38.92, 1, "Hamal (66 ly)", "LAUNCH_01"),
+            (2, "Taurus", 4, "Minoan Akrotiri", 36.35, 25.40, 2, "Aldebaran/Pleiades (65-444 ly)", "LAUNCH_02"),
+            (3, "Gemini", 5, "Roanoke Colony", 35.90, -75.67, 2, "Castor & Pollux (34-51 ly)", "LAUNCH_03_1587_ANOMALY"),
+            (4, "Cancer", 6, "Yonaguni Terrace", 24.43, 123.01, 3, "Praesepe Cluster (577 ly)", "LAUNCH_04"),
+            (5, "Leo", 7, "Pre-Dynastic Giza", 29.9792, 31.1342, 3, "Regulus (79 ly)", "LAUNCH_05"),
+            (6, "Virgo", 8, "Active Earth Crust", 29.9792, 31.1342, 4, "Spica (250 ly)", "EARTH_ANCHOR_UNLAUNCHED"),
+            (7, "Libra", 9, "Submerged Dwarka", 22.24, 68.96, 5, "Zubeneschamali (185 ly)", "LAUNCH_06"),
+            (8, "Scorpio", 10, "Classic Maya (Tikal)", 17.22, -89.62, 5, "Antares (550 ly)", "LAUNCH_07"),
+            (9, "Sagittarius", 11, "Cahokia Mounds", 38.65, -90.06, 6, "Nunki (228 ly)", "LAUNCH_08"),
+            (10, "Capricorn", 12, "Tiwanaku / Titicaca", -16.55, -68.67, 7, "Deneb Algedi (39 ly)", "LAUNCH_09"),
+Use code with caution.
+(11, "Aquarius", 13, "Rapa Nui (Easter Isl.)", -27.11, -109.35, 7, "Sadalsuud (540 ly)", "LAUNCH_10"),
+(12, "Pisces", 14, "Doggerland Shelf", 54.50, 2.50, 8, "Fomalhaut (25 ly)", "LAUNCH_11"),
+]
+def build_extraction_ledger(self) -> list[ColonyExtractionVector]:
+ledger = []
+sector_hop_km = self.arc_distance_km / 12.0
+single_hop_sec = sector_hop_km / self.v_zener_hop_kms  # 0.708333 s per hop
+for idx, (col_id, z_name, ch_num, site, lat, lon, p_sec, star, status) in enumerate(
+self.zodiac_registry
+):
+ch_hz = ch_num * self.core.f_heterodyne_step_hz
+shift_hz = ch_hz - self.core.f_tuesday_hz
+star_vec = (self.base_star_angle + idx * 30.0) % 360.0
+window_sec = self.tau_0_sec * (self.decay_ratio ** idx)
+old_lat, old_lon = self.core.rodrigues_preshift_coords(lat, lon)
+ledger.append(
+ColonyExtractionVector(
+colony_id=col_id,
+zodiac_name=z_name,
+channel_num=ch_num,
+channel_hz=ch_hz,
+heterodyne_shift_hz=shift_hz,
+site_name=site,
+modern_lat=lat,
+modern_lon=lon,
+preshift_lat=old_lat,
+preshift_lon=old_lon,
+pizza_sector=p_sec,
+star_system=star,
+star_vector_deg=round(star_vec, 2),
+cascade_window_sec=round(window_sec, 2),
+zener_hop_sec=round(single_hop_sec, 3),
+status_note=status,
+)
+)
+return ledger
+def run_master_diagnostic():
+core = MaserEarthPhysicsCore()
+tumbler = ThreeTumblerEngine(core)
+mux = ExtractionMultiplexer(core)
+nov13_state = tumbler.evaluate(datetime.datetime(2026, 11, 13, 15, 47, 0))
+xmas_eve_state = tumbler.evaluate(datetime.datetime(2026, 12, 24, 23, 41, 0))
+ledger = mux.build_extraction_ledger()
+total_zener_flight_sec = sum(item.zener_hop_sec for item in ledger)
+print("==========================================================================")
+print("MASER-EARTH MASTER ENGINE DIAGNOSTIC (UNIFIED ARCHITECTURE)")
+print("==========================================================================")
+print(f"Compressed Radius (R_ME)      : {core.r_maser_earth_km:.4f} km (1.45% glitch scale)")
+print(f"Tuesday / Indigo Pixels       : {core.pixel_tuesday_km:.4f} km / {core.pixel_indigo_km:.4f} km")
+print(f"45-Deg Diagonal Zener Hop     : {core.diagonal_hop_km:.4f} km")
+print(f"Standing-Wave Ring / Node     : {core.half_node_radius_km:.2f} km radius / {core.full_node_diameter_km:.2f} km diameter")
+print(f"Blue Dragon Plasma Grid       : {core.blue_dragon_plasma_ghz:.2f} GHz (Pi-Phi Closure)")
+print(f"Cat Dragon Gold-Clock         : {core.cat_dragon_gold_clock_hz:.1f} Hz ({core.pixel_gold_clock_km:.4f} km px)")
+print(f"Ark Quarter-Wave Gift (Z_0)   : {core.ark_quarter_wave_hz:.2f} Hz | Pearl Angle: {core.holbein_nacre_angle_deg:.2f} deg")
+print(f"Impedance Reflection (Gamma)  : 1/{int(round(1.0 / core.gamma_reflection))} ({core.gamma_reflection:.4f})")
+print("--------------------------------------------------------------------------")
+print(f"Epoch Snap (Nov 13, 2026)     : Tooth {nov13_state.sprocket_tooth} | Wobble Day {nov13_state.chandler_wobble_day}/433 | Dial {nov13_state.master_dial_angle_deg} deg")
+print(f"Quench Start (Dec 24, 23:41)  : Day +{xmas_eve_state.day_index} | Current I(t) = {xmas_eve_state.instantaneous_current_a:.3e} A")
+print(f"Total Zener Flight Time       : {total_zener_flight_sec:.2f} s across 12 nodes (inside 1140.0 s window)")
+print("--------------------------------------------------------------------------")
+print("12-ZODIAC CHANNEL LADDER, PRE-SHIFT COORDINATES & POLAR-THROAT VECTORS:")
+for v in ledger:
+print(
+f"#{v.colony_id:02d} {v.zodiac_name:<11} | Ch {v.channel_num:02d} ({v.channel_hz:5.1f} Hz, {v.heterodyne_shift_hz:+6.1f} Hz) | "
+f"{v.site_name:<19} | Pre-Shift: ({v.preshift_lat:6.2f}, {v.preshift_lon:7.2f}) | "
+f"Win: {v.cascade_window_sec:6.2f}s | Vec: {v.star_vector_deg:6.2f} deg | {v.status_note}"
+)
+if name == "main":
+run_master_diagnostic()
+
+### Continuity Note on Roanoke's Channel Position
+One detail inside the prompt's earlier mechanics summary referred to Roanoke as *"Node 10 (Roanoke)"* while the canonical 12-Zodiac table places **Roanoke Colony** at **Colony #3 (`Channel 5 — 275 Hz`, Gemini `60°–90°`)** and **Classic Maya (Tikal)** at **Colony #8 (`Channel 10 — 550 Hz`, Scorpio `210°–240°`)**. The unified Python module above preserves the canonical **Colony #3 / Channel 5 (`275 Hz`)** slot from the confirmed 12-Zodiac table while flagging it as `LAUNCH_03_1587_ANOMALY`.
+
+<FollowUp>
+Specify whether the next step should **write the scene where Brownie Dog reads the Wellfleetian pearl in reverse at the `28.96°` Holbein angle to uncover the inverse flight map**, or **draft the climax sequence at the Wandering Magnetic Pole Casimir throat**.
+</FollowUp>
+Cicorimport datetime
+import math
+from dataclasses import dataclass
+
+
+@dataclass
+class ThreeTumblerState:
+    timestamp: datetime.datetime
+    day_index: int
+    sprocket_tooth: int
+    solar_vs_360_slip: float
+    secular_residue_days: float
+    chandler_wobble_day: float
+    chandler_wobble_angle_deg: float
+    hudson_giza_arc_pixels: float
+    spatial_grid_phase_deg: float
+    master_dial_angle_deg: float
+    instantaneous_current_a: float
+
+
+@dataclass
+class ColonyExtractionVector:
+    colony_id: int
+    zodiac_name: str
+    channel_num: int
+    channel_hz: float
+    heterodyne_shift_hz: float
+    site_name: str
+    modern_lat: float
+    modern_lon: float
+    preshift_lat: float
+    preshift_lon: float
+    pizza_sector: int
+    star_system: str
+    star_vector_deg: float
+    cascade_window_sec: float
+    zener_hop_sec: float
+    status_note: str
+
+
+class MaserEarthPhysicsCore:
+    """Core constants, Weyl scale ratios, Dragon frequencies, and Pearl/Ark optics."""
+
+    def __init__(self):
+        # Planetary & Crustal Grid Constants
+        self.r_earth_km = 6371.0
+        self.glitch_pct = 1.45
+        self.r_maser_earth_km = self.r_earth_km * (1.0 - self.glitch_pct / 100.0)  # 6278.6205 km
+        self.crust_wave_speed_kms = 5950.0  # Knot 4 hyper-velocity phase wave (km/s)
+        
+        # Frequency Anchors
+        self.f_tuesday_hz = 440.0
+        self.f_indigo_hz = 385.0
+        self.f_heterodyne_step_hz = 55.0
+        self.f_bio_nesting_hz = self.f_tuesday_hz / 4.0  # 110.0 Hz
+        
+        # Spatial Pixels & Nodes
+        self.pixel_tuesday_km = self.crust_wave_speed_kms / self.f_tuesday_hz  # 13.522727 km
+        self.pixel_indigo_km = self.crust_wave_speed_kms / self.f_indigo_hz    # 15.454545 km
+        self.diagonal_hop_km = self.pixel_tuesday_km * math.sqrt(2.0)          # 19.1240 km
+        self.half_node_radius_km = 4.0 * self.pixel_tuesday_km                 # 54.0909 km
+        self.full_node_diameter_km = 8.0 * self.pixel_tuesday_km               # 108.1818 km
+        
+        # Dragon Lineages & Metronome Standards
+        self.blue_dragon_plasma_ghz = 13.52       # Crashed secured grid (Pi-Phi closure)
+        self.cat_dragon_gold_clock_hz = 1851.5    # Gold-Clock zero-point vacuum standard
+        self.gold_clock_multiplier = self.cat_dragon_gold_clock_hz / self.f_tuesday_hz  # 4.207955
+        self.pixel_gold_clock_km = self.pixel_tuesday_km / self.gold_clock_multiplier   # 3.2136 km
+        self.gold_bio_nesting_hz = self.cat_dragon_gold_clock_hz / 4.0                  # 462.875 Hz
+        
+        # Impedance, Ark Quarter-Wave Gift & Wellfleetian Pearl Optics
+        self.gamma_reflection = (self.f_tuesday_hz - self.f_indigo_hz) / (
+            self.f_tuesday_hz + self.f_indigo_hz
+        )  # 1/15 (0.066667)
+        self.ark_quarter_wave_hz = math.sqrt(self.f_indigo_hz * self.f_tuesday_hz)  # 411.5823 Hz
+        self.holbein_nacre_angle_deg = math.degrees(math.acos(7.0 / 8.0))           # 28.9550 deg
+        self.rudolph_pilot_nm = 650.0
+        
+        # Gyroscopic Pivot & Giza Stator Crank
+        self.pivot_lat = 29.98
+        self.pivot_lon = 29.98
+        self.crust_twist_deg = 29.98
+        self.giza_lat = 29.9792
+        self.giza_lon = 31.1342
+        self.giza_equatorial_offset_deg = 30.0000 - self.giza_lat  # 0.0208 deg
+
+    def rodrigues_preshift_coords(self, lat_deg: float, lon_deg: float) -> tuple[float, float]:
+        """Reverses the +29.98 deg crust shift around the 29.98 N, 29.98 E gyroscopic pivot."""
+        theta = math.radians(-self.crust_twist_deg)
+        p_lat, p_lon = math.radians(self.pivot_lat), math.radians(self.pivot_lon)
+        n = (
+            math.cos(p_lat) * math.cos(p_lon),
+            math.cos(p_lat) * math.sin(p_lon),
+            math.sin(p_lat),
+        )
+        s_lat, s_lon = math.radians(lat
